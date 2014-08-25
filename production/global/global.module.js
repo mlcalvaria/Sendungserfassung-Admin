@@ -1,0 +1,1 @@
+var globalModule = angular.module('global',[]);

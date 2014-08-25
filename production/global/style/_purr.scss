@@ -1,0 +1,38 @@
+.purr{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 16px;
+  z-index: 9001;
+  margin-bottom: 8px;
+  background-color: #fff;
+  width: 225px;
+  font-family: sans-serif;
+  border: 1px solid #3666ae;
+}
+
+.purr-icon{
+  display: block;
+  font-size: 22px;
+  padding: 0.25em;
+}
+
+.purr-info{
+  background: #a3c1e8;
+}
+
+.purr-warning{
+  background: #e8e678;
+}
+
+.purr-success{
+  background: #7ce889;
+}
+
+.purr-error{
+  background: #ff5943;
+}
+
+.purr-body{
+  padding: 0.25em;
+}

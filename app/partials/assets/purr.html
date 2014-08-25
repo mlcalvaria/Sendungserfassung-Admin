@@ -1,0 +1,27 @@
+<div class="purr" ng-show="notificationQueue.length || interceptionQueue.length">
+
+    <div ng-repeat="notification in notificationQueue">
+        <div class="purr-head" ng-class="notification.class">
+            <span class="purr-icon fa" ng-class="notification.icon"> {{notification.type}}</span>
+        </div>
+
+        <div class="purr-body">
+            <p class="purr-message" ng-click="test()">{{notification.message}}</p>
+        </div>
+    </div>
+
+    <div ng-repeat="interception in interceptionQueue">
+        <div class="purr-head" ng-class="interception.class">
+            <span class="purr-icon fa" ng-class="interception.icon"> {{interception.type}}</span>
+        </div>
+
+        <div class="purr-body">
+            <p class="purr-message">{{interception.message}}</p>
+            <button ng-click="interception.approval.fire()" ng-show="interception.approval.caption">{{interception.approval.caption}}</button>
+            <button ng-click="interception.decline.fire()" ng-show="interception.decline.caption">{{interception.decline.caption}}</button>
+        </div>
+    </div>
+
+</div>
+
+

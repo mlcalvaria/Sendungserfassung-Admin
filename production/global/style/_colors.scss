@@ -1,0 +1,49 @@
+$brand-green: #47c243 !default;
+$brand-blue: #032bd4 !default;
+$brand-yellow: #ffcd06 !default;
+$brand-yellow-light: #fffacd !default;
+$brand-red: #e34328 !default;
+$brand-darkgrey: #505050 !default;
+$brand-lightgrey: #d5d5d5 !default;
+
+$brand-color-decentBlue:    #99ceff;
+$brand-color-decentYellow:  #edffd5;
+
+$brand-bg: #efefef !default;
+
+$spw-green: #47c243 !default;
+$spw-grey: #e0eaeb !default;
+$spw-darkgrey: #797f80 !default;
+$spw-blue: #4f77cd !default;
+$spw-red: #cd584a !default;
+
+$font-color: #000000 !default;
+
+/*------------------------------------*\
+    Text
+\*------------------------------------*/
+
+$fontfamily-journalHeading:   sans    !default;
+$fontfamily-heading:          aleo    !default;
+$fontfamily-button:           Noto Sans    !default;
+$fontfamily-text:             Noto Sans   !default;
+
+$fontsize-t-3: 10px !default;
+$fontsize-t-2: 12px !default;
+$fontsize-t-1: 14px !default;
+$fontsize-t0 : 16px !default;
+$fontsize-t1 : 18px !default;
+$fontsize-t2 : 22px !default;
+$fontsize-t3 : 34px !default;
+$fontsize-t4 : 48px !default;
+$fontsize-t5 : 72px !default;
+
+$base-line-height:  24px !default;
+
+/*------------------------------------*\
+    Meisurement
+\*------------------------------------*/
+
+$base-spacing-unit: $base-line-height;
+
+$line-height-ratio: $base-line-height / $fontsize-t0;
