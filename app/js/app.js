@@ -31,9 +31,6 @@ app.config(['$routeProvider', function($routeProvider) {
 
 
 
-
-
-
 var SERVER = {
 
 };
