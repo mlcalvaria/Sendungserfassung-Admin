@@ -22,7 +22,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
 
-        .when('/', {templateUrl: './partials/start/start.html',controller:'startCtrl'})
+        .when('/', {templateUrl: './partials/start/asasasasasasas.html',controller:'startCtrl'})
 
         .when('/404', {templateUrl: './partials/global/404.html',controller:'404Ctrl'})
 
