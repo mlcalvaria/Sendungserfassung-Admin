@@ -3,4 +3,8 @@ loginModule.controller('loginCtrl', function($scope, user){
     user.login($scope.username, $scope.password)
 
    };
+
+    $scope.myFunction = fucntion(){
+
+    };
 });
