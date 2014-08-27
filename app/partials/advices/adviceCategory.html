@@ -1,13 +1,13 @@
 <div class="advice-cat">
 
-    <h2 class="inline">{{category.name}}</h2>
-    <span class="icon-2x reveal-btn" ng-click="toggle ()" ng-class="{'icon-caret-up': category.open, 'icon-caret-down': !category.open}"></span>
+    <h2 class="inline icon-spin">{{category.name}}</h2>
+    <span class="icon-2x reveal-btn icon-spin" ng-click="toggle ()" ng-class="{'icon-caret-up': category.open, 'icon-caret-down': !category.open}"></span>
 
-    <div class="advice-block" ng-repeat="advice in category.data | advicefilter: category.name" ng-show="category.open">
+    <div class="advice-block icon-spin" ng-repeat="advice in category.data | advicefilter: category.name" ng-show="category.open">
 
-            <input type="text" class="advice-input" ng-model="advice.description">
+            <input type="text" class="advice-input icon-spin" ng-model="advice.description">
 
-            <span class="icon-trash icon-2x makeRed"></span>
+            <span class="icon-trash icon-2x makeRed icon-spin"></span>
 
     </div>
 
