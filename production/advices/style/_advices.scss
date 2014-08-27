@@ -1,7 +1,7 @@
 .advices-container{
-   margin-left: 10%;
-   margin-top: 5%;
- }
+  margin-left: 10%;
+  margin-top: 5%;
+}
 
 .advice-cat{
   display: inline-block;
@@ -29,14 +29,18 @@
   background: transparent;
 }
 
-.reveal-btn{
-  @include vendor(color, 0.2s);
-  margin-left: 5px;
-  color: #afafaf;
-  font-size: 18px;
-
+.hover{
   &:hover{
-    @include vendor(color, 0.2s);
-    color: #000;
+    .changecolor{
+      color: #808080;
+    }
   }
+}
+
+.inline{
+  display: inline;
+}
+
+.pointer{
+  cursor: pointer;
 }

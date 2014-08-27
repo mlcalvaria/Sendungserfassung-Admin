@@ -4,7 +4,7 @@ loginModule.controller('loginCtrl', function($scope, user){
     console.log('123');
    };
 
-    $scope.myFunction = fucntion(){
+    $scope.myFunction = function(){
         console.log('foobar');
     };
 
