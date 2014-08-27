@@ -456,6 +456,10 @@ ul {
   background: #97d1f4 !important;
 }
 
+.inline {
+  display: inline;
+}
+
 @font-face {
   font-family: 'FontAwesome';
   src: url("fontawesome-webfont.eot?v=3.2.0");
@@ -2267,4 +2271,78 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 
 .purr-body {
   padding: 0.25em;
+}
+
+.advices-container {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.advice-cat {
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+}
+
+.advice-block .makeRed {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.advice-block:hover .makeRed {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+  color: red;
+}
+
+.advice-input {
+  border: none;
+  background: transparent;
+}
+
+.reveal-btn {
+  -webkit-color: 0.2s;
+  -moz-color: 0.2s;
+  -ms-color: 0.2s;
+  -o-color: 0.2s;
+  color: 0.2s;
+  margin-left: 5px;
+  color: #afafaf;
+  font-size: 18px;
+}
+.reveal-btn:hover {
+  -webkit-color: 0.2s;
+  -moz-color: 0.2s;
+  -ms-color: 0.2s;
+  -o-color: 0.2s;
+  color: 0.2s;
+  color: #000;
+}
+
+.login-container {
+  width: 100%;
+}
+
+.login-form {
+  text-align: center;
+  display: block;
+}
+
+.login-input {
+  display: block;
+  margin: 0 auto;
+  margin: 5px auto;
+}
+
+.nekka {
+  display: block;
+  margin: 0 auto;
+  margin: 5px auto;
 }

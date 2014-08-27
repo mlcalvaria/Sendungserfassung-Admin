@@ -1,0 +1,1 @@
+var advicesModule = angular.module('advices', []);

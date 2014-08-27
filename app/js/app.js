@@ -11,18 +11,38 @@
 
 
 
+
+
+
+
+
+
+
+
 var app = angular.module('app', [
     'ngRoute',
     'global',
     'start',
-    'purr'
+    'login',
+    'purr',
+    'advices',
+    'firebase'
 ]);
+
 
 app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
 
-        .when('/', {templateUrl: './partials/start/asasasasasasas.html',controller:'startCtrl'})
+        .when('/', {templateUrl: './partials/login/loginscreen.html',controller:'loginCtrl'})
+
+        .when('/advices', {templateUrl: './partials/advices/advices.html',controller:'advicesCtrl', resolve: {
+            advices: function (Advices){
+
+                return Advices.get()
+
+            }
+        }})
 
         .when('/404', {templateUrl: './partials/global/404.html',controller:'404Ctrl'})
 
@@ -31,9 +51,9 @@ app.config(['$routeProvider', function($routeProvider) {
 
 
 
-var SERVER = {
 
-};
+
+var FIREBASE = 'https://acquisition.firebaseio.com'
 var globalModule = angular.module('global',[]);
 globalModule.service('toolkit',function(){
 
@@ -859,6 +879,66 @@ purr.provider('purr',function(){
 globalModule.controller('404Ctrl',function(){
 
 });
+globalModule.factory('user',function($firebaseSimpleLogin,$location,purr){
+
+    var ref = new Firebase(FIREBASE);
+
+    return{
+
+        /**
+         * Der FirebaseSimpleLogin gibt ein Referenzobjekt zurück welches etliche Methoden zur Interaktion mit dem
+         * Benutzerverwaltungssystem. Weiterhin enthält es ein Objekt `user`. Ist kein Benutzer angemeldet ist der Wert dieses Objektes null,
+         * andernfalls enthält es Meta- & Statusinformationen zum angemeldeten Benutzer
+         */
+        getReference: function(){
+            return   $firebaseSimpleLogin(ref, function(error, user) {
+                if (error) {
+                    purr.info('Es liegt ein Problem mit dem Server vor. Bitte kontaktieren sie den Administrator');
+                }
+            });
+
+        },
+
+        login: function(alias,password){
+
+            var auth = this.getReference();
+
+            auth.$login('password', {
+                email: alias,
+                password: password
+            })
+                .then(function(res){
+                    purr.success('Erfolgreich angemeldet');
+
+                    /**
+                     *
+                     * Das Setzen der session uid dient lediglich zur Vereinfachung der Datenbankzugriffe
+                     *
+                     * Der globale service `user` gibt mittels user.id die provider id der Sitzung zurück um beispielsweise
+                     * eine einfache Initialisierung zum Laden aller Sendungsinstanzen des momentan angemeldeten Benutzers durch den shipment service
+                     * zu ermöglichen.
+                     *
+                     * Die Überprüfung der Echtheit und Validität der Sitzung erfolgt über das Firebase System und die dort festgelegten `Security rules'
+                     *
+                     */
+                    localStorage['userid'] = res.uid;
+
+                    $location.path('/advices');
+                })
+                .catch(function(res){
+                    purr.error('Falscher Benutzername oder falsches Kennwort.')
+                });
+
+        },
+
+        id: (function(){
+            return localStorage['userid'];
+        })()
+    }
+
+
+
+});
 var startModule = angular.module('start',[]);
 startModule.controller('startCtrl',function($scope,$location,$routeParams,Survey){
 
@@ -870,4 +950,91 @@ startModule.controller('startCtrl',function($scope,$location,$routeParams,Survey
 
     }
 
+});
+var loginModule = angular.module('login', []);
+
+
+loginModule.controller('loginCtrl', function($scope, user){
+   $scope.login = function (){
+    user.login($scope.username, $scope.password)
+
+   };
+});
+var advicesModule = angular.module('advices', []);
+advicesModule.controller('advicesCtrl', function($scope){
+
+
+
+});
+advicesModule.factory('Advices', function ($firebase){
+
+    var ref = $firebase (new Firebase (FIREBASE + '/treatments'));
+
+    var treatments = ref.$asArray();
+
+    return {
+
+        data:[],
+
+        get: function (){
+
+            var self = this;
+
+            treatments.$loaded()
+                .then (function(res){
+                    self.data = res;
+
+            });
+
+            return treatments.$loaded();
+
+        },
+
+        add: function(){
+
+
+
+        }
+    }
+});
+advicesModule.filter ('advicefilter', function(){
+
+    return function(items, category){
+
+        var results = [];
+
+
+        items.forEach(function(item, ind, array){
+            if (category == item.category){
+                results.push(item);
+            }
+        });
+
+        return results;
+
+
+    }
+
+
+});
+
+
+
+advicesModule.directive ('adviceCategory', function (Advices){
+    return {
+        restrict: 'E',
+        scope: true,
+        templateUrl: 'partials/advices/adviceCategory.html',
+        link: function(scope, element, atrs){
+            scope.category = {
+                name: atrs.val,
+                data: Advices.data,
+                open: false
+            };
+            scope.toggle = function (){
+                scope.category.open = !scope.category.open;
+            }
+
+        }
+}
 });
