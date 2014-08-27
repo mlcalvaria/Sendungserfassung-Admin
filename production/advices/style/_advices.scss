@@ -19,7 +19,7 @@
     .makeRed {
       @include vendor(transition, opacity 0.5s);
       opacity: 1;
-      color: red;
+      color: #808080;
     }
   }
 }
@@ -32,7 +32,7 @@
 .hover{
   &:hover{
     .changecolor{
-      color: #808080;
+      color: #ff00e0;
     }
   }
 }
