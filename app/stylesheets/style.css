@@ -2269,14 +2269,42 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   padding: 0.25em;
 }
 
-.login-container {
-  width: 100%;
-  height: 100%;
+.advices-container {
+  margin-left: 10%;
+  margin-top: 5%;
 }
 
-.form-container {
-  width: 50%;
-  margin: 0 auto;
+.advice-cat {
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+}
+
+.advice-block .makeRed {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+.advice-block:hover .makeRed {
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
+  color: red;
+}
+
+.advice-input {
+  border: none;
+  background: transparent;
+}
+
+.login-container {
+  width: 100%;
 }
 
 .login-form {
@@ -2287,4 +2315,11 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 .login-input {
   display: block;
   margin: 0 auto;
+  margin: 5px auto;
+}
+
+.nekka {
+  display: block;
+  margin: 0 auto;
+  margin: 5px auto;
 }
