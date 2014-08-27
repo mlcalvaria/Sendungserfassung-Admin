@@ -8,4 +8,7 @@ loginModule.controller('loginCtrl', function($scope, user){
         console.log('foobar');
     };
 
+    $scope.anotherOneBitesTheDust = function(){
+
+    };
 });

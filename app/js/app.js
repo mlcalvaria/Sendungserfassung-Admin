@@ -956,9 +956,17 @@ var loginModule = angular.module('login', []);
 
 loginModule.controller('loginCtrl', function($scope, user){
    $scope.login = function (){
-    user.login($scope.username, $scope.password)
-
+    user.login($scope.username, $scope.password);
+    console.log('123');
    };
+
+    $scope.myFunction = function(){
+        console.log('foobar');
+    };
+
+    $scope.anotherOneBitesTheDust = function(){
+
+    };
 });
 var advicesModule = angular.module('advices', []);
 advicesModule.controller('advicesCtrl', function($scope){
