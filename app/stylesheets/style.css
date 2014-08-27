@@ -456,6 +456,10 @@ ul {
   background: #97d1f4 !important;
 }
 
+.inline {
+  display: inline;
+}
+
 @font-face {
   font-family: 'FontAwesome';
   src: url("fontawesome-webfont.eot?v=3.2.0");
@@ -2301,6 +2305,25 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 .advice-input {
   border: none;
   background: transparent;
+}
+
+.reveal-btn {
+  -webkit-color: 0.2s;
+  -moz-color: 0.2s;
+  -ms-color: 0.2s;
+  -o-color: 0.2s;
+  color: 0.2s;
+  margin-left: 5px;
+  color: #afafaf;
+  font-size: 18px;
+}
+.reveal-btn:hover {
+  -webkit-color: 0.2s;
+  -moz-color: 0.2s;
+  -ms-color: 0.2s;
+  -o-color: 0.2s;
+  color: 0.2s;
+  color: #000;
 }
 
 .login-container {

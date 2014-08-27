@@ -961,30 +961,38 @@ loginModule.controller('loginCtrl', function($scope, user){
    };
 });
 var advicesModule = angular.module('advices', []);
-advicesModule.controller('advicesCtrl', function($scope, Advices){
+advicesModule.controller('advicesCtrl', function($scope){
 
-$scope.advices = Advices.data
+
 
 });
 advicesModule.factory('Advices', function ($firebase){
 
     var ref = $firebase (new Firebase (FIREBASE + '/treatments'));
 
+    var treatments = ref.$asArray();
+
     return {
 
         data:[],
 
         get: function (){
+
             var self = this;
-            var treatments = ref.$asArray();
 
             treatments.$loaded()
                 .then (function(res){
-                    self.data = res
+                    self.data = res;
 
             });
 
             return treatments.$loaded();
+
+        },
+
+        add: function(){
+
+
 
         }
     }

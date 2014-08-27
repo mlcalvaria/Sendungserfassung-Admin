@@ -1,5 +1,5 @@
-advicesModule.controller('advicesCtrl', function($scope, Advices){
+advicesModule.controller('advicesCtrl', function($scope){
 
-$scope.advices = Advices.data
+
 
 });
