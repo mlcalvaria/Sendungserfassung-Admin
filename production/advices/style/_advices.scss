@@ -32,7 +32,13 @@
 .hover{
   &:hover{
     .changecolor{
-      color: #ff00e0;
+      color: #000000;
+      @include vendor(transition, transform 0.5s);
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
     }
   }
 }
@@ -43,4 +49,14 @@
 
 .pointer{
   cursor: pointer;
+}
+
+.changecolor{
+  color: #808080;
+  @include vendor(transition, transform 0.5s);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
