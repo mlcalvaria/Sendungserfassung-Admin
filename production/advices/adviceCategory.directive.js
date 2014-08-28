@@ -11,8 +11,8 @@ advicesModule.directive ('adviceCategory', function (Advices){
             };
             scope.toggle = function (){
                 scope.category.open = !scope.category.open;
-            }
-
+            };
+//hi
         }
 }
 });

@@ -2299,7 +2299,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
   opacity: 1;
-  color: red;
+  color: #808080;
 }
 
 .advice-input {
@@ -2307,23 +2307,16 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   background: transparent;
 }
 
-.reveal-btn {
-  -webkit-color: 0.2s;
-  -moz-color: 0.2s;
-  -ms-color: 0.2s;
-  -o-color: 0.2s;
-  color: 0.2s;
-  margin-left: 5px;
-  color: #afafaf;
-  font-size: 18px;
+.hover:hover .changecolor {
+  color: #ff00e0;
 }
-.reveal-btn:hover {
-  -webkit-color: 0.2s;
-  -moz-color: 0.2s;
-  -ms-color: 0.2s;
-  -o-color: 0.2s;
-  color: 0.2s;
-  color: #000;
+
+.inline {
+  display: inline;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .login-container {
